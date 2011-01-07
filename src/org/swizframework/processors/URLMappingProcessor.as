@@ -314,10 +314,13 @@ package org.swizframework.processors
 		 */
 		protected function constructUrl( url:String, params:Array ):String
 		{
-			for( var i:int = 0; i < params.length; i++ )
-			{
-				url = url.replace( new RegExp( "\\{" + i + "\\}", "g" ), params[ i ] );
-			}
+      if (params != null)
+      {
+        for( var i:int = 0; i < params.length; i++ )
+        {
+          url = url.replace( new RegExp( "\\{" + i + "\\}", "g" ), params[ i ] );
+        }
+      }
 			
 			return url;
 		}
